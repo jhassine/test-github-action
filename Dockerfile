@@ -9,6 +9,8 @@ RUN apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev mak
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
+COPY action.md .
+
 ENTRYPOINT [ "/usr/bin/entrypoint.sh" ]
 
 CMD [""]
