@@ -1,20 +1,22 @@
 #!/usr/bin/env sh
 
-set -e
+set +e
 
 function print () {
-  echo "Folder \$$1=$(eval $1)"
-  ls -la $(eval $1)
+  sleep 1
+  echo "Folder: $1"
+  ls -lar $1
   echo ""
 }
 
-print "PWD"
-print "HOME"
-print "GITHUB_WORKFLOW"
-print "GITHUB_WORKSPACE"
-print "GITHUB_EVENT_PATH"
-print "RUNNER_TEMP"
+print "/opt/hostedtoolcache"
+print "/github/workspace"
+print "/github/workflow"
+print "/home/runner/work/test-github-workflow"
+print "/github/home"
 
+echo "ENVs:"
 env
 
-docker run -t --rm busybox echo "hello world"
+
+docker run --rm busybox echo "hello world"
