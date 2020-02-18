@@ -7,8 +7,8 @@ ARG DOCKER_VERSION
 RUN apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make && \
     pip install --no-cache-dir "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
 
-COPY entrypoint.sh ./
+COPY entrypoint.sh /usr/bin/entrypoint.sh
 
-ENTRYPOINT [ "entrypoint.sh" ]
+ENTRYPOINT [ "/usr/bin/entrypoint.sh" ]
 
 CMD [""]
