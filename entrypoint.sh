@@ -15,3 +15,5 @@ print "GITHUB_WORKFLOW"
 print "GITHUB_WORKSPACE"
 print "GITHUB_EVENT_PATH"
 print "RUNNER_TEMP"
+
+env
