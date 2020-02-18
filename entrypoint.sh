@@ -17,3 +17,5 @@ print "GITHUB_EVENT_PATH"
 print "RUNNER_TEMP"
 
 env
+
+docker run -it --rm busybox echo "hello world"
