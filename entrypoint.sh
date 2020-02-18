@@ -3,7 +3,6 @@
 set -e
 
 function print () {
-  [ -z "$(eval $1)" ] && return
   echo "Folder \$$1=$(eval $1)"
   ls -la $(eval $1)
   echo ""
@@ -18,4 +17,4 @@ print "RUNNER_TEMP"
 
 env
 
-docker run -it --rm busybox echo "hello world"
+docker run -t --rm busybox echo "hello world"
